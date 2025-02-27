@@ -1,0 +1,355 @@
+.back-to-top {
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+/* Rocket Container */
+.rocket {
+  position: relative;
+  width: 50px;
+  height: 100px;
+  margin: auto;
+  transition: transform 0.5s ease;
+  scale: 0.6;
+  filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.6));
+}
+
+@media (width<786px) {
+  .rocket {
+    scale: 0.4;
+  }
+}
+
+.rocket-shadow {
+  position: absolute;
+  top: -28px;
+  right: 0;
+  height: calc(100% + 24px);
+  width: 50%;
+  border-top: 28px solid transparent;
+  border-left: 21px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 0px solid transparent;
+  z-index: 2;
+}
+
+/* Rocket Body */
+.rocket-body-top {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 50px solid #ddd;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  height: 0;
+  width: 58px;
+}
+
+.rocket-body-top-pointer {
+  position: absolute;
+  width: 42px;
+  top: -27px;
+  border-style: solid;
+  border-width: 0 20px 27px 20px;
+  border-color: transparent transparent #ddd transparent;
+}
+
+.rocket-body-top-pointer-edge {
+  position: absolute;
+  top: -27.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: black;
+  border-radius: 4px 4px 0 0;
+}
+
+.rocket-body-top-pointer-edge::before {
+  content: "";
+  position: absolute;
+  top: -0.5px;
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 10px 12px 10px;
+  border-color: transparent transparent black transparent;
+}
+
+.rocket-body-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 50px;
+  height: 60px;
+  background: #ddd; /* Body color */
+  z-index: 1;
+}
+
+/* Rocket Window */
+.rocket-window {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg);
+  width: 30px;
+  height: 30px;
+  border: 4px solid black;
+  border-radius: 40%;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  /* Rotate the circle */
+}
+
+.rocket-down-fins {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 6px;
+  border-top: 6px solid #555;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  height: 0;
+  width: 109px;
+  z-index: 1;
+}
+
+.rocket-body-launcher {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 14px;
+  bottom: -14px;
+  z-index: 1;
+  border-top: 14px solid #ccc;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  filter: drop-shadow(6px 6px 6px rgba(0, 0, 0, 0.5));
+}
+
+/* Rocket Fins */
+.rocket-fin {
+  position: absolute;
+  bottom: 4px;
+  width: 20px;
+  height: 60px;
+  border-style: solid;
+}
+
+.rocket-fin-left {
+  left: -20px;
+  border-top: 0px solid transparent;
+  border-right: 0px solid transparent;
+  border-left: 20px solid transparent;
+  border-bottom: 60px solid #ddd;
+  filter: drop-shadow(-2px 0px 1px black);
+}
+
+.rocket-fin-right {
+  right: -20px;
+  border-top: 0px solid transparent;
+  border-right: 20px solid transparent;
+  border-left: 0px solid transparent;
+  border-bottom: 60px solid #ddd;
+  filter: drop-shadow(2px 0px 1px black);
+}
+
+.rocket-fin-extra {
+  position: absolute;
+  bottom: -60px;
+  width: 20px;
+  height: 20px;
+  border-style: solid;
+}
+
+.rocket-fin-extra-left {
+  left: -20px;
+  border-top: 18px solid transparent;
+  border-right: 20px solid #ddd;
+  border-left: 0px solid #ddd;
+  border-bottom: 20px solid #ddd;
+}
+
+.rocket-fin-extra-right {
+  left: 0px;
+  border-top: 18px solid transparent;
+  border-right: 0px solid #ddd;
+  border-left: 20px solid #ddd;
+  border-bottom: 20px solid #ddd;
+}
+
+.rocket-fin-point {
+  position: absolute;
+  height: 20px;
+  width: 10px;
+  border-style: solid;
+}
+
+.rocket-fin-point-left {
+  left: -10px;
+  border-width: 0 0 20px 10px;
+  border-color: transparent transparent #ddd transparent;
+}
+
+.rocket-fin-point-right {
+  left: 0px;
+  border-width: 20px 0 0px 10px;
+  border-color: transparent transparent transparent #ddd;
+}
+
+/* Rocket Flame */
+.rocket-flame {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  transition: transform 0.5s ease;
+  width: 20px;
+  height: 30px;
+  overflow: visible;
+}
+
+.back-to-top.hidden {
+  transform: translateY(250px);
+  opacity: 0;
+}
+
+.back-to-top.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.back-to-top.fly-out {
+  transform: translateY(-550px);
+  opacity: 0;
+}
+
+.rocket.launching {
+  animation: shake 0.2s infinite alternate;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(2px);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+}
+
+/* Flame Elements */
+.flame {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 40px;
+  background: orange;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: flame 1s infinite alternate;
+}
+
+/* Staggered flame animations */
+.flame.flame-1 {
+  animation-delay: 0s;
+  top: 6px;
+}
+
+.flame.flame-2 {
+  animation-delay: 0.2s;
+  width: 20px;
+  height: 30px;
+  background: yellow;
+  top: 6px;
+}
+
+.flame.flame-3 {
+  animation-delay: 0.4s;
+  width: 12px;
+  height: 24px;
+  background: red;
+}
+
+/* Simple flame flicker animation */
+@keyframes flame {
+  0% {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) scaleY(1.2);
+    opacity: 0.5;
+  }
+}
+
+.rocket.launching .rocket-flame {
+  transform: translateX(-50%) scale(1);
+}
+
+/* Cloud Images for Launch Effect */
+.rocket-cloud {
+  position: absolute;
+  bottom: -60px;
+  width: 40px;
+  opacity: 1;
+}
+
+.rocket.launching .rocket-cloud-left {
+  left: -30px;
+  animation: cloudEffect-left 0.5s 4 forwards;
+}
+
+.rocket.launching .rocket-cloud-right {
+  right: -30px;
+  animation: cloudEffect-right 0.5s 4 forwards;
+}
+
+.rocket.launching .rocket-cloud-left-2 {
+  left: -30px;
+  animation: cloudEffect-left 0.5s 4 forwards;
+  animation-delay: 0.25s;
+}
+
+.rocket.launching .rocket-cloud-right-2 {
+  right: -30px;
+  animation: cloudEffect-right 0.5s 4 forwards;
+  animation-delay: 0.25s;
+}
+
+@keyframes cloudEffect-left {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-20px) scale(1.5);
+  }
+}
+
+@keyframes cloudEffect-right {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20px) scale(1.5);
+  }
+}
+
+.rocket.launching .rocket-flame.super-flame {
+  transform: translateX(-50%) scale(2) translateY(5px);
+  transition: transform 0.5s ease;
+}
