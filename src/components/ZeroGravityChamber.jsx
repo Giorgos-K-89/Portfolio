@@ -101,14 +101,14 @@ export default function ZeroGravityChamber({
       { texture: "/icons/figma.png", border: "#ccc", background: "#2e2e2e" },
     ];
 
-    // Since your icons are 200x200, we define:
-    const baselineIconSize = 200;
-    // Let the inner circle (icon container) have a diameter equal to the icon's size,
-    // and the outer bubble be slightly larger.
-    const innerDiameter = 60; // Inner circle (fits the icon exactly)
-    const outerDiameter = 110; // Outer circle (the "bubble" border)
-    const outerRadius = outerDiameter / 2; // e.g. 110px
-    const innerRadius = innerDiameter / 2; // e.g. 100px
+    const baselineScreenWidth = 1000;
+    const scaleFactor = Math.min(width / baselineScreenWidth, 1);
+    // Maximum dimensions
+    const baselineIconSize = 200 * scaleFactor;
+    const innerDiameter = 55 * scaleFactor;
+    const outerDiameter = innerDiameter + 60;
+    const outerRadius = outerDiameter / 2;
+    const innerRadius = innerDiameter / 2;
 
     // Create 6 compound bodies ("bubbles")
     const skillBodies = skills.map((skill) => {
@@ -186,7 +186,8 @@ export default function ZeroGravityChamber({
     let textBodiesArray = [];
     if (addTextBodies && text) {
       const words = text.split(" ");
-      const font = "400 2rem Orbitron"; // Ensure this matches your rendering font.
+      const dynamicFontSize = Math.max(1.4, 2 * scaleFactor);
+      const font = `400 ${dynamicFontSize}rem Orbitron`;
       const offscreenCanvas = document.createElement("canvas");
       const offscreenCtx = offscreenCanvas.getContext("2d");
       offscreenCtx.font = font;
@@ -194,8 +195,9 @@ export default function ZeroGravityChamber({
       // Use margins to avoid drawing too close to the canvas edge.
       const marginX = 50;
       const marginRight = 50; // right margin
-      const spacing = 10; // space between words
-      const lineHeight = 70; // height for each line (can be adjusted)
+      const spacing = 10 * scaleFactor; // space between words
+      const lineHeight = Math.max(40, 70 * scaleFactor); // height for each line
+      const wordHeight = 30 * scaleFactor; // approximated word height
 
       // Get canvas width from the canvas element's rect.
       const canvas = canvasRef.current;
@@ -209,9 +211,8 @@ export default function ZeroGravityChamber({
       textBodiesArray = words.map((word) => {
         // Measure the width of the word.
         const metrics = offscreenCtx.measureText(word);
-        const wordWidth = metrics.width + 10;
+        const wordWidth = metrics.width + 10 + scaleFactor;
         // Approximating the height from the font size.
-        const wordHeight = 30;
 
         // Check if adding the next word exceeds the canvas width.
         if (x + wordWidth > canvasWidth - marginRight) {
@@ -247,17 +248,18 @@ export default function ZeroGravityChamber({
       const context = render.context;
       context.textAlign = "center";
       context.textBaseline = "middle";
+      const dynamicFontSize = Math.max(1.4, 2 * scaleFactor);
       textBodiesArray.forEach((body) => {
         const word = body.label;
         const pos = body.position;
         // Style: black letters, but if the word is "WOW", change font and color.
         if (word.toUpperCase() === "WOW") {
-          context.font = "900 2rem Orbitron";
+          context.font = `900 ${dynamicFontSize}rem Orbitron`;
           context.fillStyle = "#ff4500"; // for example, orange-red
         } else if (word === "and") {
           context.fillStyle = "#ff4500";
         } else {
-          context.font = "400 2rem Orbitron";
+          context.font = `400 ${dynamicFontSize}rem Orbitron`;
           context.fillStyle = "#000000";
         }
         context.fillText(word, pos.x, pos.y);
