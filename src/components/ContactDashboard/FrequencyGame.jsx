@@ -45,7 +45,7 @@ export default function FrequencyGame({ onMatch }) {
   return (
     <div className="flex gap-2 h-1/2">
       {/* Red Panel: Range Inputs */}
-      <div className="flex-1 bg-blue-950 flex flex-col justify-around rounded-lg p-4">
+      <div className="flex-1 bg-blue-950/70 flex flex-col justify-around rounded-lg p-4">
         <div>
           <label className="text-white text-sm">Vertical Position</label>
           <input
