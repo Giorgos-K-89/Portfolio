@@ -77,23 +77,9 @@ export default function ContactDashboard() {
       {/* Column 3: Placeholder for your custom layout */}
       <div className="flex flex-col gap-4 order-2 2xl:order-3">
         {/* Top Row: Two Columns */}
-        <div
-          className="grid gap-4 h-full"
-          style={{ gridTemplateColumns: "400px 1fr" }}
-        >
+        <div className="grid gap-4 h-full">
           <div className="rounded-lg overflow-hidden bg-black/60">
             <Globe />
-          </div>
-          {/* Extra content that fills full height of the Globe container and takes remaining width */}
-          <div className="hidden sm:flex items-end justify-around bg-blue-950/70 rounded-lg py-2">
-            <div className="w-1/3 h-1/3 bg-blue-500 rounded-lg"></div>
-            <div
-              className="w-1/3 h-3/4 rounded-lg"
-              style={{
-                background:
-                  "linear-gradient(0deg, rgba(255,0,14,1) 11%, rgba(187,119,34,1) 41%, rgba(0,255,55,1) 100%)",
-              }}
-            ></div>
           </div>
         </div>
 
