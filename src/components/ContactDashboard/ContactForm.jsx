@@ -37,7 +37,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center order-2 lg:order-3 2xl:order-2 col-span-1 lg:col-span-2 2xl:col-span-1">
       <div className="bg-black/60 p-5 rounded-lg w-full h-full flex flex-col justify-between">
         <h2 className="text-center text-4xl font-extrabold mb-10">
           Houston, We Have a Contact
