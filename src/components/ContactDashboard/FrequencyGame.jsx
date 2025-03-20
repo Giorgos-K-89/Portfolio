@@ -13,7 +13,7 @@ export default function FrequencyGame({ onMatch }) {
     Math.floor(Math.random() * (90 - 20 + 1)) + 20
   );
 
-  const [targetVertical] = useState(68);
+  const [targetVertical] = useState(73);
   const [targetWidth] = useState(100);
   const [targetHorizontal] = useState(50);
 

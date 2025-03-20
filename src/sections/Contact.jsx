@@ -2,7 +2,7 @@ import ContactDashboard from "../components/ContactDashboard/ContactDashboard";
 
 export default function Contact() {
   return (
-    <section className="relative w-full min-h-screen text-white flex px-[5vw] py-[220px]">
+    <section className="relative w-full min-h-screen text-white flex px-[5vw] pt-[220px] pb-5">
       <span className="absolute top-[160px] right-[5vw] opacity-15 text-8xl md:text-9xl">
         04
       </span>

@@ -3,7 +3,6 @@ import About from "./sections/About";
 import Landing from "./sections/Hero";
 import Contact from "./sections/Contact";
 import Skills from "./sections/Skills";
-import Footer from "./sections/Footer";
 import BackToTop from "./components/BackToTopRocket";
 import Particles from "./components/Particles";
 
@@ -27,7 +26,6 @@ export default function App() {
       <DangerMarquee />
       <Skills />
       <Contact />
-      <Footer />
       <BackToTop />
     </>
   );

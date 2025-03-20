@@ -58,7 +58,7 @@ export default function ContactDashboard() {
             style={{ backdropFilter: "blur(4px)" }}
             className="absolute inset-0 bg-black/70 flex items-center justify-center rounded-lg"
           >
-            <div className="loader">Loading...</div>
+            <div className="loader"></div>
           </div>
         )}
 
@@ -84,15 +84,15 @@ export default function ContactDashboard() {
         </div>
 
         {/* Bottom Row: Three equal panels, each 1:1 */}
-        <div className="grid grid-cols-3 p-2 bg-blue-950/70 rounded-lg">
+        <div className="grid grid-cols-3 px-2 bg-blue-950/70 rounded-lg">
           <div className="flex items-center justify-center aspect-square">
-            <Gauge label="Altitude" value={75} duration={3} />
+            <Gauge value={75} />
           </div>
           <div className="flex items-center justify-center aspect-square">
-            <Gauge label="Velocity" value={45} duration={4} />
+            <Gauge value={45} />
           </div>
           <div className="flex items-center justify-center aspect-square">
-            <Gauge label="Fuel" value={90} duration={5} />
+            <Gauge value={90} />
           </div>
         </div>
       </div>
