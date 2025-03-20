@@ -5,6 +5,7 @@ import Contact from "./sections/Contact";
 import Skills from "./sections/Skills";
 import BackToTop from "./components/BackToTopRocket";
 import Particles from "./components/Particles";
+import OrbitalCarousel from "./sections/Projects";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
       <About />
       <DangerMarquee />
       <Skills />
+      <OrbitalCarousel />
       <Contact />
       <BackToTop />
     </>
