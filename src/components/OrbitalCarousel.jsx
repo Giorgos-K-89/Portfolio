@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import projects from "../data/projects.js";
 
 export default function OrbitalCarousel() {
@@ -24,9 +25,9 @@ export default function OrbitalCarousel() {
           // Calculate the angle based on the index
           const angle = (360 / projects.length) * index;
           return (
-            <a
+            <div
               key={project.id}
-              href={project.url}
+              to={`/project/${project.id}`}
               className="absolute inset-0"
               style={{
                 transform: `rotateY(${angle}deg) translateZ(550px)`,
@@ -45,7 +46,7 @@ export default function OrbitalCarousel() {
                 alt={project.title}
                 className="w-full object-cover rounded-full shadow-lg"
               />
-            </a>
+            </div>
           );
         })}
       </div>
@@ -117,8 +118,8 @@ export default function OrbitalCarousel() {
 
             <p className="text-sm">{hoveredProject.description}</p>
           </div>
-          <a
-            href={hoveredProject.overviewUrl}
+          <Link
+            to={`/project/${hoveredProject.id}`}
             className="group flex items-center text-sm gap-2 cursor-pointer border border-white w-fit px-4 py-2 rounded-full transition-all duration-300 hover:bg-white hover:text-gray-900"
           >
             Overview
@@ -132,7 +133,7 @@ export default function OrbitalCarousel() {
             >
               <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
             </svg>
-          </a>
+          </Link>
         </div>
       )}
     </div>
