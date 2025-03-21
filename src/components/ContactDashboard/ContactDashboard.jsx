@@ -34,7 +34,7 @@ export default function ContactDashboard() {
   }, [onMatch]);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4 p-5 bg-[var(--secondaryGray)] text-white border border-white">
+    <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4 p-5 bg-[var(--secondaryGray)] text-white border border-white rounded-2xl">
       {/* Column 1: Video and Two Panels */}
       <div className="relative flex flex-col gap-4 order-1">
         {/* Video on top */}
@@ -52,7 +52,10 @@ export default function ContactDashboard() {
         </div>
         {/* Two panels below, equal width */}
         <FrequencyGame onMatch={() => setOnMatch(true)} />
-
+        <p className="bg-blue-950/70 p-4 rounded-xl">
+          ** <span className="text-green-600 font-semibold">Match</span> the
+          Frequency for contact info.
+        </p>
         {showLoader && (
           <div
             style={{ backdropFilter: "blur(4px)" }}
@@ -84,8 +87,8 @@ export default function ContactDashboard() {
         </div>
 
         {/* Bottom Row: Three equal panels, each 1:1 */}
-        <div className="grid grid-cols-3 px-2 bg-blue-950/70 rounded-lg">
-          <div className="flex items-center justify-center aspect-square">
+        <div className="grid grid-cols-2 md:grid-cols-3 px-2 bg-blue-950/70 rounded-lg">
+          <div className="hidden md:flex items-center justify-center aspect-square">
             <Gauge value={75} />
           </div>
           <div className="flex items-center justify-center aspect-square">
