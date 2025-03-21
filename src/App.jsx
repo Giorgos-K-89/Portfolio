@@ -3,9 +3,9 @@ import About from "./sections/About";
 import Landing from "./sections/Hero";
 import Contact from "./sections/Contact";
 import Skills from "./sections/Skills";
-import Footer from "./sections/Footer";
 import BackToTop from "./components/BackToTopRocket";
 import Particles from "./components/Particles";
+import Projects from "./sections/Projects";
 
 export default function App() {
   return (
@@ -26,8 +26,8 @@ export default function App() {
       <About />
       <DangerMarquee />
       <Skills />
+      <Projects />
       <Contact />
-      <Footer />
       <BackToTop />
     </>
   );

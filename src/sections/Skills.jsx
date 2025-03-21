@@ -49,7 +49,11 @@ export default function Skills() {
             text="Such WOW skills acquired through experience and training!"
           />
           <p>
-            *** DO NOT mess with the button below. Everything will FALL apart !
+            *** DO NOT PRESS the button below. Everything will{" "}
+            <span className="inline-block translate-y-2 mx-1 rotate-12 text-[var(--accentOrange)]">
+              FALL
+            </span>{" "}
+            apart !
           </p>
           <button
             className="button-82-pushable"

@@ -1,0 +1,16 @@
+@keyframes oscillate {
+  0% {
+    transform: rotate(calc(var(--base-angle) - 2deg));
+  }
+  50% {
+    transform: rotate(calc(var(--base-angle) + 2deg));
+  }
+  100% {
+    transform: rotate(calc(var(--base-angle) - 2deg));
+  }
+}
+
+.gauge-needle {
+  transform-origin: 100px 100px;
+  animation: oscillate 0.5s ease-in-out infinite;
+}
