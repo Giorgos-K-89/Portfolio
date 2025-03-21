@@ -51,12 +51,20 @@ export default function OrbitalCarousel() {
       </div>
       {/* Info Panel: shows details of hovered project */}
       {hoveredProject && (
-        <div className="absolute w-[90vw] max-w-screen-md flex-1 bg-gray-900 bg-opacity-70 backdrop-blur-lg p-8 rounded-lg text-white z-10 flex flex-col gap-4">
+        <div className="absolute w-[90vw] max-w-screen-sm flex-1 bg-gray-900 bg-opacity-70 backdrop-blur-lg pt-8 p-4 rounded-lg text-white z-10 flex flex-col gap-4">
           <span
             className="absolute top-2 right-2 cursor-pointer"
             onClick={() => setHoveredProject(null)}
           >
-            x
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e3e3e3"
+            >
+              <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
           </span>
           <img
             src={hoveredProject.previewImg}
@@ -70,7 +78,7 @@ export default function OrbitalCarousel() {
             {hoveredProject.liveUrl && (
               <a
                 href={hoveredProject.liveUrl}
-                className="cursor-pointer hover:underline"
+                className="group relative cursor-pointer"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -80,10 +88,15 @@ export default function OrbitalCarousel() {
                   viewBox="0 -960 960 960"
                   width="24px"
                   fill="#e3e3e3"
-                  className="hover:fill-[var(--primaryBlue)] transition-all duration-300"
+                  className="group-hover:fill-[var(--primaryBlue)] transition-all duration-300"
                 >
                   <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
                 </svg>
+                <div className="absolute top-0 left-[150%] bg-gray-200 px-2 py-1 rounded-sm">
+                  <p className="whitespace-nowrap text-xs text-black">
+                    Visit Live
+                  </p>
+                </div>
               </a>
             )}
           </div>
@@ -97,9 +110,13 @@ export default function OrbitalCarousel() {
               </p>
             ))}
           </div>
+          <div>
+            <p className="text-base italic mb-2 text-[var(--accentOrange)]">
+              {hoveredProject.descriptionTitle}
+            </p>
 
-          <p className="text-sm">{hoveredProject.description}</p>
-
+            <p className="text-sm">{hoveredProject.description}</p>
+          </div>
           <a
             href={hoveredProject.overviewUrl}
             className="group flex items-center text-sm gap-2 cursor-pointer border border-white w-fit px-4 py-2 rounded-full transition-all duration-300 hover:bg-white hover:text-gray-900"
