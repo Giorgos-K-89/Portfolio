@@ -13,7 +13,7 @@ export default function OrbitalCarousel() {
     >
       {/* Inner carousel container with preserve-3d */}
       <div
-        className="absolute w-60 h-60 rounded-full left-[calc(50%-144px)] transition-all duration-700"
+        className="absolute w-60 h-60 rounded-full left-[calc(50%-144px)] transition-all duration-700 motion-safe:animate-spin-slow"
         style={{
           transformStyle: "preserve-3d",
           animation: "spin-slow 30s linear infinite",
