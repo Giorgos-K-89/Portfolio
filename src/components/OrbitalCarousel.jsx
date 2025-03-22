@@ -52,7 +52,7 @@ export default function OrbitalCarousel() {
       </div>
       {/* Info Panel: shows details of hovered project */}
       {hoveredProject && (
-        <div className="absolute w-[90vw] max-w-screen-sm flex-1 bg-gray-900 bg-opacity-70 backdrop-blur-lg pt-8 p-4 rounded-lg text-white z-10 flex flex-col gap-4">
+        <div className="absolute w-[90vw] max-w-screen-sm flex-1 bg-gray-900 bg-opacity-70 backdrop-blur-lg pt-8 p-4 rounded-lg text-white z-10 flex flex-col gap-4 border-2 border-neutral-800">
           <span
             className="absolute top-2 right-2 cursor-pointer"
             onClick={() => setHoveredProject(null)}
@@ -70,7 +70,7 @@ export default function OrbitalCarousel() {
           <img
             src={hoveredProject.previewImg}
             alt="Project's Preview image Not found"
-            className="w-full rounded-lg"
+            className="w-full rounded-lg "
           />
           <div className="flex gap-2 items-center">
             <h3 className="text-2xl font-bold tracking-wide">
@@ -105,7 +105,7 @@ export default function OrbitalCarousel() {
             {hoveredProject.stack.map((s, index) => (
               <p
                 key={index}
-                className="bg-[var(--primaryBlue)] px-3 py-1 rounded-full text-xs font-semibold tracking-wider"
+                className="bg-[var(--primaryBlue)] px-3 py-1 rounded-full text-xs font-semibold tracking-wider capitalize"
               >
                 {s}
               </p>
