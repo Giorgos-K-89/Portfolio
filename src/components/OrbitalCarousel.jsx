@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import projects from "../data/projects.js";
 
 export default function OrbitalCarousel() {
@@ -24,9 +25,9 @@ export default function OrbitalCarousel() {
           // Calculate the angle based on the index
           const angle = (360 / projects.length) * index;
           return (
-            <a
+            <div
               key={project.id}
-              href={project.url}
+              to={`/project/${project.id}`}
               className="absolute inset-0"
               style={{
                 transform: `rotateY(${angle}deg) translateZ(550px)`,
@@ -45,13 +46,13 @@ export default function OrbitalCarousel() {
                 alt={project.title}
                 className="w-full object-cover rounded-full shadow-lg"
               />
-            </a>
+            </div>
           );
         })}
       </div>
       {/* Info Panel: shows details of hovered project */}
       {hoveredProject && (
-        <div className="absolute w-[90vw] max-w-screen-sm flex-1 bg-gray-900 bg-opacity-70 backdrop-blur-lg pt-8 p-4 rounded-lg text-white z-10 flex flex-col gap-4">
+        <div className="absolute w-[90vw] max-w-screen-sm flex-1 bg-gray-900 bg-opacity-70 backdrop-blur-lg pt-8 p-4 rounded-lg text-white z-10 flex flex-col gap-4 border-2 border-neutral-800">
           <span
             className="absolute top-2 right-2 cursor-pointer"
             onClick={() => setHoveredProject(null)}
@@ -69,7 +70,7 @@ export default function OrbitalCarousel() {
           <img
             src={hoveredProject.previewImg}
             alt="Project's Preview image Not found"
-            className="w-full rounded-lg"
+            className="w-full rounded-lg "
           />
           <div className="flex gap-2 items-center">
             <h3 className="text-2xl font-bold tracking-wide">
@@ -104,7 +105,7 @@ export default function OrbitalCarousel() {
             {hoveredProject.stack.map((s, index) => (
               <p
                 key={index}
-                className="bg-[var(--primaryBlue)] px-3 py-1 rounded-full text-xs font-semibold tracking-wider"
+                className="bg-[var(--primaryBlue)] px-3 py-1 rounded-full text-xs font-semibold tracking-wider capitalize"
               >
                 {s}
               </p>
@@ -117,8 +118,8 @@ export default function OrbitalCarousel() {
 
             <p className="text-sm">{hoveredProject.description}</p>
           </div>
-          <a
-            href={hoveredProject.overviewUrl}
+          <Link
+            to={`/project/${hoveredProject.id}`}
             className="group flex items-center text-sm gap-2 cursor-pointer border border-white w-fit px-4 py-2 rounded-full transition-all duration-300 hover:bg-white hover:text-gray-900"
           >
             Overview
@@ -132,7 +133,7 @@ export default function OrbitalCarousel() {
             >
               <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
             </svg>
-          </a>
+          </Link>
         </div>
       )}
     </div>

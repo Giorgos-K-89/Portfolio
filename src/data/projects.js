@@ -5,7 +5,7 @@ const projects = [
     planet: "/planets/1.png",
     previewImg: "/projects/esalon-platform.png",
     images: [],
-    stack: ["Css", "Javascript"],
+    stack: ["Html", "Css", "Javascript"],
     descriptionTitle: "Robust SaaS Application",
     description:
       "My First real world project for the company i am working, YoltLabs. Tried sooo many libraries and got experience with a very big Laravel and Livewire SaaS project.",
