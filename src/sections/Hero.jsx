@@ -35,7 +35,7 @@ export default function Landing() {
       {/* Astronaut Image */}
       <img
         src="/astronaut.png"
-        alt="Astronaut"
+        alt="Giorgos as Astronaut floating"
         className={`absolute left-full bottom-1/2 transform -translate-y-1/2 pointer-events-none 
           ${isAnimating ? "animate-float" : ""} w-[600px]`} // Add animation class once the timer is triggered
       />
