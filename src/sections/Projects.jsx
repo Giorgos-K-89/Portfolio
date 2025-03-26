@@ -2,7 +2,7 @@ import OrbitalCarousel from "../components/OrbitalCarousel";
 
 export default function Projects() {
   return (
-    <section className="relative w-full min-h-screen text-white flex pt-[220px] pb-[420px] z-10">
+    <section className="relative w-full min-h-screen text-white flex pt-[220px] pb-[420px] z-10 overflow-hidden">
       <span className="absolute top-[160px] left-[5vw] opacity-15 text-8xl md:text-9xl">
         03
       </span>
