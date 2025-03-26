@@ -39,7 +39,7 @@ export default function Skills() {
           SKILLS
         </h2>
         <div className="relative flex flex-col justify-center gap-8">
-          <h3 className="text-2xl text-center md:text-left sm:text-2xl md:text-4xl underline">
+          <h3 className="text-2xl text-neutral-300 text-center md:text-left sm:text-2xl md:text-4xl underline">
             ZERO Gravity Chamber
           </h3>
 

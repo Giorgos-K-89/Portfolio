@@ -39,11 +39,11 @@ export default function ContactForm() {
   return (
     <div className="flex justify-center items-center order-2 lg:order-3 2xl:order-2 col-span-1 lg:col-span-2 2xl:col-span-1">
       <div className="bg-black/60 p-5 rounded-lg w-full h-full flex flex-col justify-between">
-        <h2 className="text-center text-4xl xl:text-6xl font-extrabold mb-10">
+        <h2 className="text-center text-neutral-300 text-4xl xl:text-6xl font-extrabold mb-10">
           Houston, We Have a Contact
         </h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <label className="flex flex-col text-sm">
+          <label className="flex flex-col text-sm text-neutral-300">
             Commander’s Name:
             <input
               required
@@ -55,7 +55,7 @@ export default function ContactForm() {
               className="mt-1 p-2 rounded bg-white text-black"
             />
           </label>
-          <label className="flex flex-col text-sm">
+          <label className="flex flex-col text-sm text-neutral-300">
             Mission Brief:
             <input
               type="text"
@@ -66,7 +66,7 @@ export default function ContactForm() {
               className="mt-1 p-2 rounded bg-white text-black"
             />
           </label>
-          <label className="flex flex-col text-sm">
+          <label className="flex flex-col text-sm text-neutral-300">
             Contact Frequency (Email):
             <input
               required
@@ -78,7 +78,7 @@ export default function ContactForm() {
               className="mt-1 p-2 rounded bg-white text-black"
             />
           </label>
-          <label className="flex flex-col text-sm">
+          <label className="flex flex-col text-sm text-neutral-300">
             Transmission Content:
             <textarea
               required

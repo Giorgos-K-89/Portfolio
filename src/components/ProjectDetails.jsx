@@ -55,27 +55,51 @@ export default function ProjectDetails() {
             className="w-full rounded-lg mb-4 border-2 border-neutral-700"
           />
         )}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.stack.map((tech, index) => (
-            <p
-              key={index}
-              className="bg-[var(--primaryBlue)] px-3 py-1 rounded-full text-xs font-semibold tracking-wider capitalize"
+        <div className="max-w-screen-lg mx-auto">
+          <div className="flex justify-center flex-wrap gap-2 mb-10">
+            {project.stack.map((tech, index) => (
+              <p
+                key={index}
+                className="bg-[var(--primaryBlue)] px-3 py-1 rounded-full text-xs font-semibold tracking-wider capitalize"
+              >
+                {tech}
+              </p>
+            ))}
+          </div>
+
+          <p className="mb-10 text-neutral-300">{project.description}</p>
+
+          {/* My Contribution */}
+          {project.contribution && (
+            <div className="mb-10">
+              <h3 className="text-3xl font-semibold text-[var(--primaryBlue)] mb-2">
+                My Contribution
+              </h3>
+              <p className="text-neutral-300">{project.contribution}</p>
+            </div>
+          )}
+
+          {/* What I Learned */}
+          {project.learned && (
+            <div className="mb-10">
+              <h3 className="text-3xl font-semibold text-[var(--primaryBlue)] mb-2">
+                What I Learned
+              </h3>
+              <p className="text-neutral-300">{project.learned}</p>
+            </div>
+          )}
+
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded"
             >
-              {tech}
-            </p>
-          ))}
+              Visit Site
+            </a>
+          )}
         </div>
-        <p className="mb-4">{project.description}</p>
-        {project.liveUrl && (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded"
-          >
-            Visit Site
-          </a>
-        )}
       </div>
     </main>
   );
