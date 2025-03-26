@@ -193,7 +193,7 @@ export default function ZeroGravityChamber({
       offscreenCtx.font = font;
 
       // Use margins to avoid drawing too close to the canvas edge.
-      const marginX = 50;
+      const marginX = 30;
       const marginRight = 50; // right margin
       const spacing = 10 * scaleFactor; // space between words
       const lineHeight = Math.max(40, 70 * scaleFactor); // height for each line
@@ -314,7 +314,9 @@ export default function ZeroGravityChamber({
   };
 
   useEffect(() => {
-    initializeScene();
+    setTimeout(() => {
+      initializeScene();
+    }, 100);
 
     return () => {
       destroyScene(); // Cleanup when the component is unmounted or re-rendered
