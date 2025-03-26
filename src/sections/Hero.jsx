@@ -41,7 +41,7 @@ export default function Landing() {
       />
 
       {/* Header Text */}
-      <div className="absolute inset-0 flex flex-col justify-center items-center z-10 gap-10">
+      <div className="absolute inset-0 flex flex-col justify-center -translate-y-10 items-center z-10 gap-10">
         <p className="md:text-xl text-white opacity-70 text-focus-in text-center">
           Exploring the Universe of Code
         </p>

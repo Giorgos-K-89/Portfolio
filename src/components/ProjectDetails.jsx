@@ -30,19 +30,19 @@ export default function ProjectDetails() {
           {project.descriptionTitle}
         </p>
         <div className="flex flex-col lg::flex-row w-full justify-between">
-          <h1 className="text-3xl md:text-5xl lg:text-5xl xl:text-7xl font-bold mb-8 tracking-wider">
+          <h2 className="text-4xl md:text-5xl lg:text-5xl xl:text-7xl font-bold mb-8 tracking-wider">
             {project.title}
-          </h1>
-          <div className="flex items-center gap-4">
+          </h2>
+          <div className="flex items-center gap-4 mb-1">
             <Link
               to={`/project/${prevId}`}
-              className="cursor-pointer hover:underline hover:text-[var(--primaryBlue)]"
+              className="cursor-pointer hover:underline hover:text-[var(--primaryBlue)] text-sm md:text-base"
             >
               Previous Project
             </Link>
             <Link
               to={`/project/${nextId}`}
-              className="cursor-pointer hover:underline hover:text-[var(--primaryBlue)]"
+              className="cursor-pointer hover:underline hover:text-[var(--primaryBlue)] text-sm md:text-base"
             >
               Next Project
             </Link>
