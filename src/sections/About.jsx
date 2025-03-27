@@ -37,7 +37,7 @@ export default function About() {
 
   const handleResumeClick = () => {
     // Open resume page in a new tab (adjust the URL as needed)
-    window.open("/resume.png", "_blank");
+    window.open("/GiorgosKonstas_CV.pdf", "_blank");
   };
 
   return (
@@ -193,7 +193,7 @@ export default function About() {
                           ? "outline outline-4 outline-blue-700"
                           : ""
                       }`}
-                      src="resume-rotated.png"
+                      src="gkonstasCVrotated.png"
                       alt="Resume"
                     />
                     {/* Tooltip for resume */}
