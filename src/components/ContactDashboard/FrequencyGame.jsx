@@ -47,39 +47,45 @@ export default function FrequencyGame({ onMatch }) {
       {/* Red Panel: Range Inputs */}
       <div className="flex-1 bg-blue-950/70 flex flex-col justify-around rounded-lg p-4">
         <div>
-          <label className="text-white text-sm">Vertical Position</label>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={vertical}
-            onChange={(e) => setVertical(Number(e.target.value))}
-            className="w-full"
-          />
+          <label className="text-white text-sm">
+            Vertical Position
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={vertical}
+              onChange={(e) => setVertical(Number(e.target.value))}
+              className="w-full"
+            />
+          </label>
           <p className="text-white text-xs">Position Y: {vertical}</p>
         </div>
         <div>
-          <label className="text-white text-sm">Width Scale</label>
-          <input
-            type="range"
-            min="0"
-            max="200"
-            value={widthScale}
-            onChange={(e) => setWidthScale(Number(e.target.value))}
-            className="w-full"
-          />
+          <label className="text-white text-sm">
+            Width Scale
+            <input
+              type="range"
+              min="0"
+              max="200"
+              value={widthScale}
+              onChange={(e) => setWidthScale(Number(e.target.value))}
+              className="w-full"
+            />
+          </label>
           <p className="text-white text-xs">Frequency: {widthScale}</p>
         </div>
         <div>
-          <label className="text-white text-sm">Horizontal Position</label>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={horizontal}
-            onChange={(e) => setHorizontal(Number(e.target.value))}
-            className="w-full"
-          />
+          <label className="text-white text-sm">
+            Horizontal Position
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={horizontal}
+              onChange={(e) => setHorizontal(Number(e.target.value))}
+              className="w-full"
+            />
+          </label>
           <p className="text-white text-xs">Position X: {horizontal}</p>
         </div>
       </div>

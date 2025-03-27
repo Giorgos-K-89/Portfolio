@@ -49,6 +49,7 @@ export default function ContactForm() {
               required
               type="text"
               name="name"
+              autoComplete="on"
               placeholder="Enter your name"
               value={formData.name}
               onChange={handleChange}
@@ -72,6 +73,7 @@ export default function ContactForm() {
               required
               type="email"
               name="email"
+              autoComplete="on"
               placeholder="Enter your email"
               value={formData.email}
               onChange={handleChange}
