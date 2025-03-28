@@ -28,7 +28,7 @@ export default function Landing() {
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/earth.mp4" type="video/mp4" />
+        <source src="/earth720p.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
