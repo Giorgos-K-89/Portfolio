@@ -44,9 +44,9 @@ export default function ContactDashboard() {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover saturate-[.8]"
           >
-            <source src="earth.mp4" type="video/mp4" />
+            <source src="spacedust.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
